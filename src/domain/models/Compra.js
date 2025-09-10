@@ -7,6 +7,7 @@ class Compra{
     items,
     domicilio,
     direccion, // { calle, ciudad }
+    total,
   }) {
     this.id = id;
     this.cliente = cliente;
@@ -15,6 +16,7 @@ class Compra{
     this.items = items;
     this.domicilio = domicilio;
     this.direccion = direccion ?? null;
+    this.total = total;
   }
 }
 
