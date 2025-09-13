@@ -1,12 +1,18 @@
-import CreateCompra from "../../application/use-cases/CreateCompra.js";
-import GetComprasById from "../../application/use-cases/GetComprasById.js";
-import GetCompras from "../../application/use-cases/GetCompras.js";
-import PutComprasById from "../../application/use-cases/PutComprasById.js";
-import DeleteComprasById from "../../application/use-cases/DeleteComprasById.js";
+import CreateCompra from "../../application/use-cases/Compra/CreateCompra.js";
+import GetComprasById from "../../application/use-cases/Compra/GetComprasById.js";
+import GetCompras from "../../application/use-cases/Compra/GetCompras.js";
+import PutComprasById from "../../application/use-cases/Compra/PutComprasById.js";
+import DeleteComprasById from "../../application/use-cases/Compra/DeleteComprasById.js";
 import CompraRepositoryMongo from "../repositories/CompraRepositoryMongo.js";
 
 const compraRepository = new CompraRepositoryMongo();
 
+/**
+ * Crea una nueva compra.
+ * @route POST /compras
+ * @param {import("express").Request} req - Objeto de solicitud con los datos de la compra en `req.body`.
+ * @param {import("express").Response} res - Objeto de respuesta.
+ */
 export const createCompra = async (req, res) => {
   try {
     const createCompraUC = new CreateCompra(compraRepository);
@@ -17,6 +23,12 @@ export const createCompra = async (req, res) => {
   }
 };
 
+/**
+ * Obtiene todas las compras registradas.
+ * @route GET /compras
+ * @param {import("express").Request} req
+ * @param {import("express").Response} res
+ */
 export const getCompras = async (req, res) => {
   try {
     const getComprasUC = new GetCompras(compraRepository);
@@ -27,6 +39,12 @@ export const getCompras = async (req, res) => {
   }
 };
 
+/**
+ * Obtiene una compra por su ID.
+ * @route GET /compras/:id
+ * @param {import("express").Request} req - Debe contener el parámetro `id` en la URL.
+ * @param {import("express").Response} res
+ */
 export const getComprasById = async (req, res) => {
   try {
     const getComprasByIdUC = new GetComprasById(compraRepository);
@@ -38,6 +56,12 @@ export const getComprasById = async (req, res) => {
   }
 };
 
+/**
+ * Actualiza una compra existente por su ID.
+ * @route PUT /compras/:id
+ * @param {import("express").Request} req - Debe contener el `id` en la URL y los nuevos datos en `req.body`.
+ * @param {import("express").Response} res
+ */
 export const putComprasById = async (req, res) => {
   try {
     const putComprasByIdUC = new PutComprasById(compraRepository);
@@ -49,6 +73,12 @@ export const putComprasById = async (req, res) => {
   }
 };
 
+/**
+ * Elimina una compra por su ID.
+ * @route DELETE /compras/:id
+ * @param {import("express").Request} req - Debe contener el parámetro `id` en la URL.
+ * @param {import("express").Response} res
+ */
 export const deleteComprasById = async (req, res) => {
   try {
     const deleteComprasByIdUC = new DeleteComprasById(compraRepository);
