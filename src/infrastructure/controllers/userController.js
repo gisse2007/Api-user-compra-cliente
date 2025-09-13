@@ -2,7 +2,7 @@ import CreateUser from "../../application/use-cases/User/CreateUser.js";
 import {GetUserById} from "../../application/use-cases/User/GetUserById.js";
 import {GetUsers} from "../../application/use-cases/User/GetUsers.js";
 import UserRepositoryMongo from "../repositories/UserRepositoryMongo.js";
-import {PutUserById} from "../../application/use-cases/User/PutUserById.js";
+import PutUserById from "../../application/use-cases/User/PutUserById.js";
 import {DeleteUserById} from "../../application/use-cases/User/DeleteUserById.js";
 
 const userRepository = new UserRepositoryMongo();
