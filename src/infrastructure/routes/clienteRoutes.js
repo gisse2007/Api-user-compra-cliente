@@ -29,7 +29,7 @@ router.get("/", getClientes);
  * @param {string} id - ID del cliente en MongoDB.
  * @access Público
  */
-router.get("/cliente/:id", getClienteById);
+router.get("/:id", getClienteById);
 
 /**
  * @route PUT /cliente/:id
@@ -37,7 +37,7 @@ router.get("/cliente/:id", getClienteById);
  * @param {string} id - ID del cliente en MongoDB.
  * @access Público
  */
-router.put("/cliente/:id", putClienteById);
+router.put("/:id", putClienteById);
 
 /**
  * @route DELETE /cliente/:id
@@ -45,6 +45,6 @@ router.put("/cliente/:id", putClienteById);
  * @param {string} id - ID del cliente en MongoDB.
  * @access Público
  */
-router.delete("/cliente/:id", deleteClienteById);
+router.delete("/:id", deleteClienteById);
 
 export default router;

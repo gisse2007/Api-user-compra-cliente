@@ -34,7 +34,7 @@ router.get("/", getUsers);
  * @param {string} id - ID del usuario.
  * @access Público
  */
-router.get("/api/users/:id", getUserById);
+router.get("/:id", getUserById);
 
 /**
  * @route PUT /api/users/:id
@@ -42,7 +42,7 @@ router.get("/api/users/:id", getUserById);
  * @param {string} id - ID del usuario.
  * @access Público
  */
-router.put("/api/users/:id", putUserById);
+router.put("/:id", putUserById);
 
 /**
  * @route DELETE /api/users/:id
@@ -50,6 +50,6 @@ router.put("/api/users/:id", putUserById);
  * @param {string} id - ID del usuario.
  * @access Público
  */
-router.delete("/api/users/:id", deleteUserById);
+router.delete("/:id", deleteUserById);
 
 export default router;
